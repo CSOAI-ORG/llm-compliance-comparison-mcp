@@ -1,0 +1,8 @@
+name: llm-compliance-comparison-mcp
+description: MEOK AI Labs — llm compliance comparison
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/llm-compliance-comparison-mcp
+license: MIT
+runtime: python
+entrypoint: server.py
