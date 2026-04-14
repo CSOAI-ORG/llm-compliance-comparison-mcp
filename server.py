@@ -22,6 +22,9 @@ from datetime import datetime, timedelta, timezone
 from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
+import sys, os
+sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
+from auth_middleware import check_access
 
 # Tier authentication (connects to Stripe subscriptions)
 try:
@@ -327,8 +330,7 @@ def compare_providers(
     comparison_criteria: Optional[list[str]] = None,
     framework: str = "all",
     caller: str = "anonymous",
-    tier: str = "free",
-) -> str:
+    tier: str = "free", api_key: str = "") -> str:
     """Compare LLM providers (Claude, GPT-4, Gemini, Llama, Mistral) against
     governance standards. Score providers on transparency, safety, data governance,
     and accountability.
@@ -340,6 +342,9 @@ def compare_providers(
         caller: Caller identifier for rate limiting
         tier: Access tier (free/pro)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _check_rate_limit(caller, tier):
         return json.dumps({"error": err})
 
@@ -413,8 +418,7 @@ def recommend_for_use_case(
     self_hosting_required: bool = False,
     budget_constraint: str = "flexible",
     caller: str = "anonymous",
-    tier: str = "free",
-) -> str:
+    tier: str = "free", api_key: str = "") -> str:
     """Given a use case and jurisdiction, recommend the most compliant LLM provider.
     Considers regulatory requirements, data residency, safety needs, and
     deployment constraints.
@@ -428,6 +432,9 @@ def recommend_for_use_case(
         caller: Caller identifier for rate limiting
         tier: Access tier (free/pro)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _check_rate_limit(caller, tier):
         return json.dumps({"error": err})
 
@@ -560,8 +567,7 @@ def provider_risk_profile(
     provider: str,
     deployment_context: str = "enterprise",
     caller: str = "anonymous",
-    tier: str = "free",
-) -> str:
+    tier: str = "free", api_key: str = "") -> str:
     """Generate a detailed risk profile for a specific LLM provider.
     Covers vendor risk, data handling, regulatory compliance, operational
     risks, and AI-specific risks.
@@ -572,6 +578,9 @@ def provider_risk_profile(
         caller: Caller identifier for rate limiting
         tier: Access tier (free/pro)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _check_rate_limit(caller, tier):
         return json.dumps({"error": err})
 
@@ -680,8 +689,7 @@ def compliance_matrix(
     frameworks: Optional[list[str]] = None,
     providers: Optional[list[str]] = None,
     caller: str = "anonymous",
-    tier: str = "free",
-) -> str:
+    tier: str = "free", api_key: str = "") -> str:
     """Generate a compliance matrix showing all providers against all frameworks.
     Shows coverage status per provider per framework with rationale.
 
@@ -691,6 +699,9 @@ def compliance_matrix(
         caller: Caller identifier for rate limiting
         tier: Access tier (free/pro)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _check_rate_limit(caller, tier):
         return json.dumps({"error": err})
 
@@ -793,8 +804,7 @@ def crosswalk_providers(
     providers: Optional[list[str]] = None,
     csoai_articles: Optional[list[str]] = None,
     caller: str = "anonymous",
-    tier: str = "free",
-) -> str:
+    tier: str = "free", api_key: str = "") -> str:
     """Map LLM provider safety policies to CSOAI Partnership Charter articles.
     Shows how each provider's governance aligns with CSOAI's 52-article framework.
 
@@ -804,6 +814,9 @@ def crosswalk_providers(
         caller: Caller identifier for rate limiting
         tier: Access tier (free/pro)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _check_rate_limit(caller, tier):
         return json.dumps({"error": err})
 
