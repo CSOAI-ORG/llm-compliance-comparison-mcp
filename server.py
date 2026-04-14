@@ -344,9 +344,9 @@ def compare_providers(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     if err := _check_rate_limit(caller, tier):
-        return json.dumps({"error": err})
+        return {"error": err}
 
     target_providers = providers or list(LLM_PROVIDERS.keys())
     criteria = comparison_criteria or ["transparency", "safety", "data_governance", "accountability"]
@@ -404,7 +404,7 @@ def compare_providers(
         },
     }
 
-    return json.dumps(result, indent=2)
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -434,9 +434,9 @@ def recommend_for_use_case(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     if err := _check_rate_limit(caller, tier):
-        return json.dumps({"error": err})
+        return {"error": err}
 
     use_lower = use_case.lower()
 
@@ -556,7 +556,7 @@ def recommend_for_use_case(
         "top_recommendation": recommendations[0] if recommendations else None,
     }
 
-    return json.dumps(result, indent=2)
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -580,12 +580,12 @@ def provider_risk_profile(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     if err := _check_rate_limit(caller, tier):
-        return json.dumps({"error": err})
+        return {"error": err}
 
     if provider not in LLM_PROVIDERS:
-        return json.dumps({"error": f"Unknown provider: {provider}. Valid: {list(LLM_PROVIDERS.keys())}"})
+        return {"error": f"Unknown provider: {provider}. Valid: {list(LLM_PROVIDERS.keys())}"}
 
     p = LLM_PROVIDERS[provider]
 
@@ -678,7 +678,7 @@ def provider_risk_profile(
         "safety_framework_details": p["safety_framework"],
     }
 
-    return json.dumps(result, indent=2)
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -701,9 +701,9 @@ def compliance_matrix(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     if err := _check_rate_limit(caller, tier):
-        return json.dumps({"error": err})
+        return {"error": err}
 
     target_frameworks = frameworks or ["eu_ai_act", "gdpr", "nist_rmf", "iso42001", "soc2"]
     target_providers = providers or list(LLM_PROVIDERS.keys())
@@ -793,7 +793,7 @@ def compliance_matrix(
         "deployer_responsibility": "Indicates how much compliance burden falls on the deploying organization vs the provider",
     }
 
-    return json.dumps(matrix, indent=2)
+    return matrix
 
 
 # ---------------------------------------------------------------------------
@@ -816,9 +816,9 @@ def crosswalk_providers(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     if err := _check_rate_limit(caller, tier):
-        return json.dumps({"error": err})
+        return {"error": err}
 
     target_providers = providers or list(LLM_PROVIDERS.keys())
     target_articles = csoai_articles or list(CSOAI_PROVIDER_MAPPING.keys())
@@ -877,7 +877,7 @@ def crosswalk_providers(
         ),
     }
 
-    return json.dumps(result, indent=2)
+    return result
 
 
 # ---------------------------------------------------------------------------

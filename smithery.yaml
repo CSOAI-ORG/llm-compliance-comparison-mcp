@@ -1,8 +1,92 @@
 name: llm-compliance-comparison-mcp
-description: MEOK AI Labs — llm compliance comparison
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/llm-compliance-comparison-mcp
-license: MIT
-runtime: python
-entrypoint: server.py
+description: '> **By [MEOK AI Labs](https://meok.ai)** -- Sovereign AI tools for everyone.'
+version: 1.0.0
+tools:
+- name: compare_providers
+  description: Compare LLM providers (Claude, GPT-4, Gemini, Llama, Mistral) against
+  parameters:
+  - name: providers
+    type: array
+    required: false
+  - name: comparison_criteria
+    type: array
+    required: false
+  - name: framework
+    type: string
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: recommend_for_use_case
+  description: Given a use case and jurisdiction, recommend the most compliant LLM
+    provider.
+  parameters:
+  - name: use_case
+    type: string
+    required: true
+  - name: jurisdiction
+    type: string
+    required: true
+  - name: data_sensitivity
+    type: string
+    required: false
+  - name: self_hosting_required
+    type: boolean
+    required: false
+  - name: budget_constraint
+    type: string
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: provider_risk_profile
+  description: Generate a detailed risk profile for a specific LLM provider.
+  parameters:
+  - name: provider
+    type: string
+    required: true
+  - name: deployment_context
+    type: string
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: compliance_matrix
+  description: Generate a compliance matrix showing all providers against all frameworks.
+  parameters:
+  - name: frameworks
+    type: array
+    required: false
+  - name: providers
+    type: array
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: crosswalk_providers
+  description: Map LLM provider safety policies to CSOAI Partnership Charter articles.
+  parameters:
+  - name: providers
+    type: array
+    required: false
+  - name: csoai_articles
+    type: array
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false

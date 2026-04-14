@@ -1,1 +1,158 @@
-{"name":"llm-compliance-comparison-mcp","vendor":"MEOK AI Labs","homepage":"https://meok.ai","repository":"https://github.com/CSOAI-ORG/llm-compliance-comparison-mcp","runtime":"python","entrypoint":"server.py"}
+{
+  "name": "llm-compliance-comparison-mcp",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** -- Sovereign AI tools for everyone.",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "compare_providers",
+      "description": "Compare LLM providers (Claude, GPT-4, Gemini, Llama, Mistral) against",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "providers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "comparison_criteria": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "framework": {
+            "type": "string"
+          },
+          "caller": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "recommend_for_use_case",
+      "description": "Given a use case and jurisdiction, recommend the most compliant LLM provider.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "use_case": {
+            "type": "string"
+          },
+          "jurisdiction": {
+            "type": "string"
+          },
+          "data_sensitivity": {
+            "type": "string"
+          },
+          "self_hosting_required": {
+            "type": "boolean"
+          },
+          "budget_constraint": {
+            "type": "string"
+          },
+          "caller": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "use_case",
+          "jurisdiction"
+        ]
+      }
+    },
+    {
+      "name": "provider_risk_profile",
+      "description": "Generate a detailed risk profile for a specific LLM provider.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "type": "string"
+          },
+          "deployment_context": {
+            "type": "string"
+          },
+          "caller": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "provider"
+        ]
+      }
+    },
+    {
+      "name": "compliance_matrix",
+      "description": "Generate a compliance matrix showing all providers against all frameworks.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "frameworks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "providers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "caller": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "crosswalk_providers",
+      "description": "Map LLM provider safety policies to CSOAI Partnership Charter articles.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "providers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "csoai_articles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "caller": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    }
+  ]
+}
