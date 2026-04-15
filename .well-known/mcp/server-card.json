@@ -1,0 +1,57 @@
+{
+  "name": "llm-compliance-comparison",
+  "description": "LLM Provider Compliance Comparison server. Compare Claude, GPT-4, Gemini, Llama, and Mistral against governance standards (EU AI Act, NIST AI RMF, ISO 42001, GDPR, SOC 2). Recommend providers for use cases and jurisdictions. Generate risk profiles and compliance matrices. Crosswalk provider safety policies to CSOAI articles. By MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/llm-compliance-comparison-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "compare_providers",
+      "description": "Compare LLM providers (Claude, GPT-4, Gemini, Llama, Mistral) against"
+    },
+    {
+      "name": "recommend_for_use_case",
+      "description": "Given a use case and jurisdiction, recommend the most compliant LLM provider."
+    },
+    {
+      "name": "provider_risk_profile",
+      "description": "Generate a detailed risk profile for a specific LLM provider."
+    },
+    {
+      "name": "compliance_matrix",
+      "description": "Generate a compliance matrix showing all providers against all frameworks."
+    },
+    {
+      "name": "crosswalk_providers",
+      "description": "Map LLM provider safety policies to CSOAI Partnership Charter articles."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Security & Compliance"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
