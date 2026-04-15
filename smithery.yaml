@@ -1,5 +1,6 @@
 name: llm-compliance-comparison-mcp
-description: "\n        "
+description: 'Llm Compliance Comparison tools for AI agents. Capabilities: compare
+  providers, recommend for use case, provider risk profile. Built by MEOK AI Labs.'
 version: 1.0.0
 tools:
 - name: compare_providers

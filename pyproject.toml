@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 [project]
 name = "llm-compliance-comparison-mcp"
 version = "1.0.0"
-description = "MEOK AI Labs — llm-compliance-comparison-mcp"
+description = "Llm Compliance Comparison tools for AI agents. Capabilities: compare providers, recommend for use case, provider risk profile. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
 authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
