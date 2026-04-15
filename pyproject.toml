@@ -22,3 +22,6 @@ Repository = "https://github.com/CSOAI-ORG/llm-compliance-comparison-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 only-include = ["server.py"]
+
+[project.scripts]
+llm_compliance_comparison_mcp = "server:main"

@@ -1,0 +1,10 @@
+{
+  "name": "llm-compliance-comparison-mcp",
+  "description": "MEOK AI Labs \u2014 llm-compliance-comparison-mcp",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/llm-compliance-comparison-mcp",
+  "license": "MIT",
+  "runtime": "python",
+  "entryPoint": "mcp-wrapper.py"
+}
