@@ -1,40 +1,38 @@
-# LLM Compliance Comparison
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — Compare LLM providers against governance standards and regulatory frameworks
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/llm-compliance-comparison-mcp)](https://github.com/CSOAI-ORG/llm-compliance-comparison-mcp/stargazers)
+
+# ullmU complianceU comparisonU mcp
+
+****
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/llm-compliance-comparison-mcp)](https://www.npmjs.com/package/@meok-ai/llm-compliance-comparison-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/llm-compliance-comparison-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install llm-compliance-comparison-mcp
+# or
+npm install -g @meok-ai/llm-compliance-comparison-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-python server.py
-```
+See the project repository for full documentation and examples.
 
-## Tools
+## Enterprise Support
 
-### `compare_providers`
-Compare Claude, GPT-4, Gemini, Llama, and Mistral against governance standards (EU AI Act, NIST AI RMF, ISO 42001, GDPR, SOC 2).
-
-### `recommend_provider`
-Recommend LLM providers for specific use cases and jurisdictions.
-
-### `generate_risk_profile`
-Generate risk profiles for LLM providers based on safety policies and governance documentation.
-
-### `compliance_matrix`
-Generate compliance matrices crosswalking provider safety policies to CSOAI articles.
-
-### `crosswalk_safety_policies`
-Crosswalk provider safety policies to regulatory framework requirements.
-
-## Authentication
-
-Free tier: 10 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
