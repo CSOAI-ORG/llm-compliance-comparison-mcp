@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+Buy Pro: https://www.csoai.org/checkout
+
 LLM Provider Compliance Comparison MCP Server
 ===============================================
 By MEOK AI Labs | https://meok.ai
@@ -23,7 +25,6 @@ from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
 import sys, os
-sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 from auth_middleware import check_access
 
 # Tier authentication (connects to Stripe subscriptions)
@@ -360,7 +361,7 @@ def compare_providers(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _check_rate_limit(caller, tier):
         return {"error": err}
 
@@ -466,7 +467,7 @@ def recommend_for_use_case(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _check_rate_limit(caller, tier):
         return {"error": err}
 
@@ -627,7 +628,7 @@ def provider_risk_profile(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _check_rate_limit(caller, tier):
         return {"error": err}
 
@@ -763,7 +764,7 @@ def compliance_matrix(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _check_rate_limit(caller, tier):
         return {"error": err}
 
@@ -908,7 +909,7 @@ def crosswalk_providers(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _check_rate_limit(caller, tier):
         return {"error": err}
 
@@ -975,5 +976,8 @@ def crosswalk_providers(
 # ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
