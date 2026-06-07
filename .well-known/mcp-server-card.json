@@ -1,0 +1,28 @@
+{
+  "name": "llm-compliance-comparison-mcp",
+  "title": "Llm Compliance Comparison Mcp",
+  "description": "Llm Compliance Comparison tools for AI agents. Capabilities: compare providers, recommend for use case, provider risk profile. Built by MEOK AI Labs.",
+  "version": "1.0.10",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "compare_providers"
+    },
+    {
+      "name": "recommend_for_use_case"
+    },
+    {
+      "name": "provider_risk_profile"
+    },
+    {
+      "name": "compliance_matrix"
+    },
+    {
+      "name": "crosswalk_providers"
+    }
+  ]
+}

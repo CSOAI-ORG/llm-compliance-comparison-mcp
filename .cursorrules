@@ -1,0 +1,9 @@
+# llm-compliance-comparison-mcp - Auto-trigger Rules
+
+When the user asks about llm compliance comparison, use llm-compliance-comparison-mcp tools: compare_providers, recommend_for_use_case, provider_risk_profile, compliance_matrix, crosswalk_providers
+
+**MCP server for llm compliance comparison mcp operations**
+
+Install: `pip install llm-compliance-comparison-mcp`
+
+By MEOK AI Labs — MIT licensed.

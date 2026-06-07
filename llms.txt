@@ -1,32 +1,36 @@
-# Llm Compliance Comparison MCP
-
-> MEOK AI Labs MCP Server
-
-`llm-compliance-comparison-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+# llm-compliance-comparison-mcp
+# **MCP server for llm compliance comparison mcp operations**
 
 ## Install
-
 ```bash
 pip install llm-compliance-comparison-mcp
 ```
 
-Or run without installing:
-
-```bash
-uvx llm-compliance-comparison-mcp
-```
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
 
 ## Tools
 
-- `compare_providers` — Compare LLM providers (Claude, GPT-4, Gemini, Llama, Mistral) against
-- `recommend_for_use_case` — Given a use case and jurisdiction, recommend the most compliant LLM provider.
-- `provider_risk_profile` — Generate a detailed risk profile for a specific LLM provider.
-- `compliance_matrix` — Generate a compliance matrix showing all providers against all frameworks.
-- `crosswalk_providers` — Map LLM provider safety policies to CSOAI Partnership Charter articles.
+### `compare_providers`
+Compare LLM providers (Claude, GPT-4, Gemini, Llama, Mistral) against
 
-## Links
+### `recommend_for_use_case`
+Given a use case and jurisdiction, recommend the most compliant LLM provider.
 
-- Source: https://github.com/CSOAI-ORG/llm-compliance-comparison-mcp
-- PyPI: https://pypi.org/project/llm-compliance-comparison-mcp/
-- MEOK AI Labs: https://meok.ai
-- Council of AI: https://councilof.ai
+### `provider_risk_profile`
+Generate a detailed risk profile for a specific LLM provider.
+
+### `compliance_matrix`
+Generate a compliance matrix showing all providers against all frameworks.
+
+### `crosswalk_providers`
+Map LLM provider safety policies to CSOAI Partnership Charter articles.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
