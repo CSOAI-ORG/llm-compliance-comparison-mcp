@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "llm-compliance-comparison-mcp",
+    "description": "Llm Compliance Comparison MCP Server by MEOK AI Labs",
+    "version": "1.0.10",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "llm-compliance-comparison-mcp"
+      }
+    ],
+    "capabilities": [
+      "compare_providers",
+      "recommend_for_use_case",
+      "provider_risk_profile",
+      "compliance_matrix",
+      "crosswalk_providers"
+    ]
+  }
+}

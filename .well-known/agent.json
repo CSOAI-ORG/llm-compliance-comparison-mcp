@@ -1,0 +1,68 @@
+{
+  "name": "llm-compliance-comparison-mcp",
+  "description": "Llm Compliance Comparison MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/llm-compliance-comparison-mcp.html",
+  "version": "1.0.10",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "compare_providers",
+      "name": "Compare Providers",
+      "description": "compare_providers via llm-compliance-comparison-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "recommend_for_use_case",
+      "name": "Recommend For Use Case",
+      "description": "recommend_for_use_case via llm-compliance-comparison-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "provider_risk_profile",
+      "name": "Provider Risk Profile",
+      "description": "provider_risk_profile via llm-compliance-comparison-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "compliance_matrix",
+      "name": "Compliance Matrix",
+      "description": "compliance_matrix via llm-compliance-comparison-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "crosswalk_providers",
+      "name": "Crosswalk Providers",
+      "description": "crosswalk_providers via llm-compliance-comparison-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
