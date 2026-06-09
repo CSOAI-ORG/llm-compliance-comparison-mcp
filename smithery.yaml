@@ -1,93 +1,37 @@
-name: llm-compliance-comparison-mcp
-description: 'Llm Compliance Comparison tools for AI agents. Capabilities: compare
-  providers, recommend for use case, provider risk profile. Built by MEOK AI Labs.'
-version: 1.0.0
-tools:
-- name: compare_providers
-  description: Compare LLM providers (Claude, GPT-4, Gemini, Llama, Mistral) against
-  parameters:
-  - name: providers
-    type: array
-    required: false
-  - name: comparison_criteria
-    type: array
-    required: false
-  - name: framework
-    type: string
-    required: false
-  - name: caller
-    type: string
-    required: false
-  - name: tier
-    type: string
-    required: false
-- name: recommend_for_use_case
-  description: Given a use case and jurisdiction, recommend the most compliant LLM
-    provider.
-  parameters:
-  - name: use_case
-    type: string
-    required: true
-  - name: jurisdiction
-    type: string
-    required: true
-  - name: data_sensitivity
-    type: string
-    required: false
-  - name: self_hosting_required
-    type: boolean
-    required: false
-  - name: budget_constraint
-    type: string
-    required: false
-  - name: caller
-    type: string
-    required: false
-  - name: tier
-    type: string
-    required: false
-- name: provider_risk_profile
-  description: Generate a detailed risk profile for a specific LLM provider.
-  parameters:
-  - name: provider
-    type: string
-    required: true
-  - name: deployment_context
-    type: string
-    required: false
-  - name: caller
-    type: string
-    required: false
-  - name: tier
-    type: string
-    required: false
-- name: compliance_matrix
-  description: Generate a compliance matrix showing all providers against all frameworks.
-  parameters:
-  - name: frameworks
-    type: array
-    required: false
-  - name: providers
-    type: array
-    required: false
-  - name: caller
-    type: string
-    required: false
-  - name: tier
-    type: string
-    required: false
-- name: crosswalk_providers
-  description: Map LLM provider safety policies to CSOAI Partnership Charter articles.
-  parameters:
-  - name: providers
-    type: array
-    required: false
-  - name: csoai_articles
-    type: array
-    required: false
-  - name: caller
-    type: string
-    required: false
-  - name: tier
-    type: string
-    required: false
+# smithery.yaml — Smithery (https://smithery.ai) submission payload
+# Repo: CSOAI-ORG/llm-compliance-comparison-mcp
+# Generated: 2026-06-09
+# Transport: stdio (PyPI package, installed via uvx)
+# See: DISTRIBUTION_GAPS_2026-06-08.md for the channel strategy
+startCommand:
+  type: stdio
+  timeout: 120000
+  pingInterval: 5000
+  pingTimeout: 30000
+  configSchema:
+    type: object
+    required: []
+    properties:
+      apiKey:
+        type: string
+        description: "MEOK API key (optional; required for x402 paywalled tools)"
+        default: ""
+      x402PayTo:
+        type: string
+        description: "USDC address for x402 micropayments (default: meok.ai wallet)"
+        default: ""
+      logLevel:
+        type: string
+        description: "Log level (debug, info, warn, error)"
+        default: "info"
+    additionalProperties: false
+  commandFunction: |-
+    (config) => ({
+      command: 'uvx',
+      args: ['llm_compliance_comparison'],
+      env: {
+        MEOK_API_KEY: config.apiKey || '',
+        X402_PAY_TO: config.x402PayTo || '',
+        MEOK_LOG_LEVEL: config.logLevel || 'info',
+      }
+    })
