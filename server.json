@@ -4,9 +4,8 @@
   "version": "1.0.11",
   "description": "Llm Compliance Comparison MCP Server by MEOK AI Labs",
   "repository": {
-    "type": "git",
     "url": "https://github.com/CSOAI-ORG/llm-compliance-comparison-mcp",
-    "source": "https://github.com/CSOAI-ORG/llm-compliance-comparison-mcp"
+    "source": "github"
   },
   "packages": [
     {
