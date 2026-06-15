@@ -1,0 +1,112 @@
+{
+  "name": "Llm Compliance Comparison Mcp",
+  "version": "1.0.10",
+  "url": "https://mcp.meok.ai/llm-compliance-comparison-mcp/a2a",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "protocolVersion": "0.3.0",
+  "description": "Llm Compliance Comparison tools for AI agents. Capabilities: compare providers, recommend for use case, provider risk profile. Built by MEOK AI Labs.",
+  "provider": {
+    "organization": "MEOK AI LABS",
+    "url": "https://meok.ai"
+  },
+  "defaultInputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "compare_providers",
+      "name": "Compare Providers",
+      "description": "Compare Providers — a tool of the llm-compliance-comparison-mcp MCP.",
+      "tags": [
+        "compliance"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "recommend_for_use_case",
+      "name": "Recommend For Use Case",
+      "description": "Recommend For Use Case — a tool of the llm-compliance-comparison-mcp MCP.",
+      "tags": [
+        "compliance"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "provider_risk_profile",
+      "name": "Provider Risk Profile",
+      "description": "Provider Risk Profile — a tool of the llm-compliance-comparison-mcp MCP.",
+      "tags": [
+        "compliance"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "compliance_matrix",
+      "name": "Compliance Matrix",
+      "description": "Compliance Matrix — a tool of the llm-compliance-comparison-mcp MCP.",
+      "tags": [
+        "compliance"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "crosswalk_providers",
+      "name": "Crosswalk Providers",
+      "description": "Crosswalk Providers — a tool of the llm-compliance-comparison-mcp MCP.",
+      "tags": [
+        "compliance"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    }
+  ],
+  "documentationUrl": "https://meok.ai",
+  "x-meok": {
+    "mcp_name": "llm-compliance-comparison-mcp",
+    "verifier": "https://proofof.ai/verify",
+    "governed_by": "CSOAI 52-article charter"
+  }
+}
